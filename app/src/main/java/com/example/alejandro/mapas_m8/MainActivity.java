@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnTodos;
     EditText etMatricula;
 
+    /**
+     *
+     * Metodo que se ejecuta nadamás se inicia la aplicación.
+     * Muestra el layout principal y declara los botnoes/textos que
+     * se van a utilizar en esta activity
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +46,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     *
+     * Metodo que al clicar en uno de los botones ejecuta la acción de cada uno de ellos.
+     * Si se trata del boton concreto: verifica que el campo existe teniendo en cuenta el editText
+     * del layout y mostrará un mensaje para que el usuario sepa si lo ha puesto bien o no.
+     * Y lanzará el intent a la clase correspondiente
+     *
+     * En el otro aso no hace falta preguntar por ningun autobus ya que te los muestra todos, hace el intent
+     * a su actividad correspondiente
+     *
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
 
@@ -62,6 +83,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    /**
+     *
+     * Este metodo se encarga de verificar si el campo de matricula está vacío y en caso afirmativo
+     * mostrará un mensaje
+     *
+     *
+     *
+     * @return
+     */
     private boolean verificarVacio() {
 
         String matricula = etMatricula.getText().toString().trim();
